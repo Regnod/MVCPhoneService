@@ -3,42 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repo;
 
 namespace Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200314011537_PhoneLine")]
+    partial class PhoneLine
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Data.Employee", b =>
-                {
-                    b.Property<int>("EmployeeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CostCenter")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EmployeeName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PersonalCode")
-                        .HasColumnType("int");
-
-                    b.HasKey("EmployeeId");
-
-                    b.ToTable("Employees");
-                });
 
             modelBuilder.Entity("Data.MobilePhone", b =>
                 {
@@ -53,21 +34,6 @@ namespace Repo.Migrations
                     b.HasKey("IMEI");
 
                     b.ToTable("MobilePhones");
-                });
-
-            modelBuilder.Entity("Data.MobilePhoneWithLine", b =>
-                {
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IMEI")
-                        .HasColumnType("int");
-
-                    b.HasKey("PhoneNumber", "IMEI");
-
-                    b.HasIndex("IMEI");
-
-                    b.ToTable("MobilePhoneWithLine");
                 });
 
             modelBuilder.Entity("Data.PhoneLine", b =>
@@ -282,21 +248,6 @@ namespace Repo.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("Data.MobilePhoneWithLine", b =>
-                {
-                    b.HasOne("Data.MobilePhone", "MobilePhone")
-                        .WithMany("MobilePhoneWithLines")
-                        .HasForeignKey("IMEI")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Data.PhoneLine", "PhoneLine")
-                        .WithMany("MobilePhoneWithLines")
-                        .HasForeignKey("PhoneNumber")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
