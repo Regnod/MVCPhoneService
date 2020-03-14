@@ -6,12 +6,17 @@
     <e p="$USER_HOME$/.Rider2019.3/system/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_MVCPhoneService.2071779703.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Data" t="IncludeRecursive">
+        <e p="CallingPlan.cs" t="Include" />
         <e p="Data.csproj" t="IncludeRecursive" />
+        <e p="DataPlan.cs" t="Include" />
         <e p="Employee.cs" t="Include" />
         <e p="ErrorViewModel.cs" t="Include" />
+        <e p="LandlinePhoneCall.cs" t="Include" />
         <e p="MobilePhone.cs" t="Include" />
+        <e p="MobilePhoneCall.cs" t="Include" />
+        <e p="MobilePhoneCallingPlanAssignment.cs" t="Include" />
+        <e p="MobilePhoneDataPlanAssignment.cs" t="Include" />
         <e p="MobilePhoneEmployee.cs" t="Include" />
-        <e p="MobilePhoneWithLine.cs" t="Include" />
         <e p="PhoneLine.cs" t="Include" />
         <e p="PhoneLineEmployee.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -134,6 +139,16 @@
         <e p="Migrations" t="Include">
           <e p="20200314043249_initial.Designer.cs" t="Include" />
           <e p="20200314043249_initial.cs" t="Include" />
+          <e p="20200314143725_a4.Designer.cs" t="Include" />
+          <e p="20200314143725_a4.cs" t="Include" />
+          <e p="20200314150429_a5.Designer.cs" t="Include" />
+          <e p="20200314150429_a5.cs" t="Include" />
+          <e p="20200314152701_a7.Designer.cs" t="Include" />
+          <e p="20200314152701_a7.cs" t="Include" />
+          <e p="20200314161052_a8.Designer.cs" t="Include" />
+          <e p="20200314161052_a8.cs" t="Include" />
+          <e p="20200314162552_a9.Designer.cs" t="Include" />
+          <e p="20200314162552_a9.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Repo.csproj" t="IncludeRecursive" />

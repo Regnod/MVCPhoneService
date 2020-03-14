@@ -11,7 +11,10 @@ namespace Data
         public int PUK { get; set; }
         public int PIN { get; set; }
         
-        public  List<MobilePhoneWithLine> MobilePhoneWithLines { get; set; }
         public List<PhoneLineEmployee> PhoneLineEmployees { get; set; }
+        public List<MobilePhoneCall> MobilePhoneCalls { get; set; }
+        public List<MobilePhoneDataPlanAssignment> MobilePhoneDataPlanAssignments { get; set; }
+        public List<MobilePhoneCallingPlanAssignment> MobilePhoneCallingPlanAssignments { get; set; }
+        
     }
 }

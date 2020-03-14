@@ -13,7 +13,8 @@ namespace Data
         public string CostCenter { get; set; }
         public int PersonalCode { get; set; }
         
-        public  IEnumerable<MobilePhoneEmployee> MobilePhoneEmployees { get; set; }
+        public  List<MobilePhoneEmployee> MobilePhoneEmployees { get; set; }
         public  List<PhoneLineEmployee> PhoneLineEmployees { get; set; }
+        public List<LandlinePhoneCall> LandlinePhoneCalls { get; set; }
     }
 }

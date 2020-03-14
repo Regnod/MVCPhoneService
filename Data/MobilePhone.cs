@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -10,7 +9,8 @@ namespace Data
 
         public string Modelo { get; set; }
 
-        public List<MobilePhoneWithLine> MobilePhoneWithLines { get; set; }
-        public IEnumerable<MobilePhoneEmployee> MobilePhoneEmployee { get; set; }
+        public List<MobilePhoneEmployee> MobilePhoneEmployee { get; set; }
+        public  List<MobilePhoneCall> MobilePhoneCalls { get; set; }
+        public List<MobilePhoneDataPlanAssignment> MobilePhoneDataPlanAssignments { get; set; }
     }
 }
