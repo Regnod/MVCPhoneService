@@ -12,5 +12,6 @@ namespace Data
         public int PIN { get; set; }
         
         public  List<MobilePhoneWithLine> MobilePhoneWithLines { get; set; }
+        public List<PhoneLineEmployee> PhoneLineEmployees { get; set; }
     }
 }

@@ -43,8 +43,21 @@ namespace Repo
                 .HasOne(pl => pl.PhoneLine)
                 .WithMany(mpl => mpl.MobilePhoneWithLines)
                 .HasForeignKey(mp => mp.PhoneNumber);
-            
-            
+
+            builder.Entity<MobilePhoneEmployee>()
+                .HasKey(a => a.IMEI);
+            builder.Entity<MobilePhoneEmployee>()
+                .HasOne(a => a.MobilePhone)
+                .WithMany(a => a.MobilePhoneEmployee)
+                .HasForeignKey(b => b.IMEI);
+            builder.Entity<MobilePhoneEmployee>()
+            .HasOne(a => a.Employee)
+            .WithMany(a => a.MobilePhoneEmployees)
+            .HasForeignKey(a => a.EmployeeId);
+
+            builder.Entity<PhoneLineEmployee>()
+                .HasKey(a => a.PhoneNumber);
+            //TODO terminar la tabla R3
         }
     }
 }

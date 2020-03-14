@@ -10,8 +10,10 @@
         <e p="Employee.cs" t="Include" />
         <e p="ErrorViewModel.cs" t="Include" />
         <e p="MobilePhone.cs" t="Include" />
+        <e p="MobilePhoneEmployee.cs" t="Include" />
         <e p="MobilePhoneWithLine.cs" t="Include" />
         <e p="PhoneLine.cs" t="Include" />
+        <e p="PhoneLineEmployee.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -130,16 +132,8 @@
       <e p="Repo" t="IncludeRecursive">
         <e p="ApplicationDbContext.cs" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="20200313215738_InitialCreate.Designer.cs" t="Include" />
-          <e p="20200313215738_InitialCreate.cs" t="Include" />
-          <e p="20200314010342_MobilePhone.Designer.cs" t="Include" />
-          <e p="20200314010342_MobilePhone.cs" t="Include" />
-          <e p="20200314011537_PhoneLine.Designer.cs" t="Include" />
-          <e p="20200314011537_PhoneLine.cs" t="Include" />
-          <e p="20200314012110_Employee.Designer.cs" t="Include" />
-          <e p="20200314012110_Employee.cs" t="Include" />
-          <e p="20200314015614_MobilePhoneWithLine.Designer.cs" t="Include" />
-          <e p="20200314015614_MobilePhoneWithLine.cs" t="Include" />
+          <e p="20200314043249_initial.Designer.cs" t="Include" />
+          <e p="20200314043249_initial.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Repo.csproj" t="IncludeRecursive" />

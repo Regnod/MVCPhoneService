@@ -6,11 +6,11 @@ namespace Data
 {
     public class MobilePhone
     {
-        [Key]
-        public int IMEI { get; set; }
-        
+        [Key] public int IMEI { get; set; }
+
         public string Modelo { get; set; }
-        
+
         public List<MobilePhoneWithLine> MobilePhoneWithLines { get; set; }
+        public IEnumerable<MobilePhoneEmployee> MobilePhoneEmployee { get; set; }
     }
 }
