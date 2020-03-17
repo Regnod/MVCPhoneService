@@ -1,0 +1,42 @@
+﻿@model Data.MobilePhoneDataPlanAssignment
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>MobilePhoneDataPlanAssignment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PhoneNumber" />
+            <input type="hidden" asp-for="DataPlanAssignmentDateTime" />
+            <input type="hidden" asp-for="DataPlanId" />
+            <div class="form-group">
+                <label asp-for="NationalDataUsage" class="control-label"></label>
+                <input asp-for="NationalDataUsage" class="form-control" />
+                <span asp-validation-for="NationalDataUsage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InternationalDataUsage" class="control-label"></label>
+                <input asp-for="InternationalDataUsage" class="form-control" />
+                <span asp-validation-for="InternationalDataUsage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

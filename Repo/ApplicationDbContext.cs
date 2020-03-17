@@ -31,6 +31,7 @@ namespace Repo
         public DbSet<MobilePhoneCall> MobilePhoneCalls { get; set; }
         public DbSet<MobilePhoneDataPlanAssignment> MobilePhoneDataPlanAssignments { get; set; }
         public DbSet<MobilePhoneCallingPlanAssignment> MobilePhoneCallingPlanAssignments { get; set; }
+        public DbSet<LandlinePhoneCall> LandLinePhoneCalls { get; set; }
         
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

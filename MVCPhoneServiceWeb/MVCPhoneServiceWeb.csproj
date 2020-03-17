@@ -17,4 +17,8 @@
       <ProjectReference Include="..\Repo\Repo.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\MobilePhone\Index.cshtml" />
+    </ItemGroup>
+
 </Project>

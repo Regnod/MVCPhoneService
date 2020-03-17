@@ -38,7 +38,18 @@
           </e>
         </e>
         <e p="Controllers" t="Include">
+          <e p="CallingPlansController.cs" t="Include" />
+          <e p="DataPlansController.cs" t="Include" />
+          <e p="EmployeesController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
+          <e p="LandlinePhoneCallsController.cs" t="Include" />
+          <e p="MobilePhoneCallingPlanAssignmentsController.cs" t="Include" />
+          <e p="MobilePhoneCallsController.cs" t="Include" />
+          <e p="MobilePhoneDataPlanAssignmentsController.cs" t="Include" />
+          <e p="MobilePhoneEmployeesController.cs" t="Include" />
+          <e p="MobilePhonesController.cs" t="Include" />
+          <e p="PhoneLineEmployeesController.cs" t="Include" />
+          <e p="PhoneLinesController.cs" t="Include" />
         </e>
         <e p="MVCPhoneServiceWeb.csproj" t="IncludeRecursive" />
         <e p="Program.cs" t="Include" />
@@ -47,9 +58,86 @@
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="Views" t="Include">
+          <e p="CallingPlans" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="DataPlans" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Employees" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="LandlinePhoneCalls" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="MobilePhoneCallingPlanAssignments" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="MobilePhoneCalls" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="MobilePhoneDataPlanAssignments" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="MobilePhoneEmployees" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="MobilePhones" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="PhoneLineEmployees" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="PhoneLines" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
             <e p="Error.cshtml" t="Include" />
@@ -149,6 +237,8 @@
           <e p="20200314161052_a8.cs" t="Include" />
           <e p="20200314162552_a9.Designer.cs" t="Include" />
           <e p="20200314162552_a9.cs" t="Include" />
+          <e p="20200317042041_a34.Designer.cs" t="Include" />
+          <e p="20200317042041_a34.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Repo.csproj" t="IncludeRecursive" />

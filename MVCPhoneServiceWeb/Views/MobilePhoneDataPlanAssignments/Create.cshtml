@@ -1,0 +1,52 @@
+﻿@model Data.MobilePhoneDataPlanAssignment
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>MobilePhoneDataPlanAssignment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <select asp-for="PhoneNumber" class ="form-control" asp-items="ViewBag.PhoneNumber"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPlanAssignmentDateTime" class="control-label"></label>
+                <input asp-for="DataPlanAssignmentDateTime" class="form-control" />
+                <span asp-validation-for="DataPlanAssignmentDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPlanId" class="control-label"></label>
+                <select asp-for="DataPlanId" class ="form-control" asp-items="ViewBag.DataPlanId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="NationalDataUsage" class="control-label"></label>
+                <input asp-for="NationalDataUsage" class="form-control" />
+                <span asp-validation-for="NationalDataUsage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InternationalDataUsage" class="control-label"></label>
+                <input asp-for="InternationalDataUsage" class="form-control" />
+                <span asp-validation-for="InternationalDataUsage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

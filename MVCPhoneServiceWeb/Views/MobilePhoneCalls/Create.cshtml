@@ -1,0 +1,57 @@
+﻿@model Data.MobilePhoneCall
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>MobilePhoneCall</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <select asp-for="PhoneNumber" class ="form-control" asp-items="ViewBag.PhoneNumber"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IMEI" class="control-label"></label>
+                <select asp-for="IMEI" class ="form-control" asp-items="ViewBag.IMEI"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateTime" class="control-label"></label>
+                <input asp-for="DateTime" class="form-control" />
+                <span asp-validation-for="DateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobilePhoneCallAddressee" class="control-label"></label>
+                <input asp-for="MobilePhoneCallAddressee" class="form-control" />
+                <span asp-validation-for="MobilePhoneCallAddressee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobilePhoneCallDuration" class="control-label"></label>
+                <input asp-for="MobilePhoneCallDuration" class="form-control" />
+                <span asp-validation-for="MobilePhoneCallDuration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobilePhoneCallCost" class="control-label"></label>
+                <input asp-for="MobilePhoneCallCost" class="form-control" />
+                <span asp-validation-for="MobilePhoneCallCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
