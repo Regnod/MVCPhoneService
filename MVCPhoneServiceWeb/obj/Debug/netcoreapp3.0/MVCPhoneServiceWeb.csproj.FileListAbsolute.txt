@@ -76,7 +76,6 @@
 /mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/MVCPhoneServiceWeb.csproj.CopyComplete
 /mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/MVCPhoneServiceWeb.dll
 /mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/MVCPhoneServiceWeb.pdb
-/mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/Razor/Views/MobilePhone/Index.cshtml.g.cs
 /mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/Razor/Views/Employees/Create.cshtml.g.cs
 /mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/Razor/Views/Employees/Delete.cshtml.g.cs
 /mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/Razor/Views/Employees/Details.cshtml.g.cs

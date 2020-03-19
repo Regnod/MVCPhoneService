@@ -14,7 +14,7 @@
         "outputPath": "/mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/adrian/.nuget/NuGet/NuGet.Config"
+          "/home/adrian/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -70,7 +70,7 @@
         "outputPath": "/mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/Repo/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/adrian/.nuget/NuGet/NuGet.Config"
+          "/home/adrian/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -138,6 +138,9 @@
             }
           ],
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

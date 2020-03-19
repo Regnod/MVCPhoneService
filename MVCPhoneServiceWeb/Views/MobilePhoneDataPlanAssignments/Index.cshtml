@@ -12,24 +12,28 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneLine)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataPlan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NationalDataUsage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InternationalDataUsage)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneLine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPlanAssignmentDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NationalDataUsage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InternationalDataUsage)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.PhoneLine.PhoneNumber)
@@ -38,17 +42,20 @@
                 @Html.DisplayFor(modelItem => item.DataPlan.DataPlanId)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.DataPlanAssignmentDateTime)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.NationalDataUsage)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.InternationalDataUsage)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
