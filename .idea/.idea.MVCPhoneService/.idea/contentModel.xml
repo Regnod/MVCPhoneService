@@ -173,12 +173,239 @@
         </e>
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
+            <e p="animate.min.css" t="Include" />
+            <e p="bootstrap.min.css" t="Include" />
+            <e p="candidates.css" t="Include" />
+            <e p="candidates.map" t="Include" />
+            <e p="flaticon.css" t="Include" />
+            <e p="font-awesome.min.css" t="Include" />
+            <e p="gijgo.css" t="Include" />
+            <e p="jquery-ui.css" t="Include" />
+            <e p="magnific-popup.css" t="Include" />
+            <e p="nice-select.css" t="Include" />
+            <e p="owl.carousel.min.css" t="Include" />
             <e p="site.css" t="Include" />
+            <e p="slicknav.css" t="Include" />
+            <e p="style.css" t="Include" />
+            <e p="style.map" t="Include" />
             <e p="table.css" t="Include" />
+            <e p="theme-default.css" t="Include" />
+            <e p="theme-default.map" t="Include" />
+            <e p="themify-icons.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />
+          <e p="fonts" t="Include">
+            <e p="Flaticon.eot" t="Include" />
+            <e p="Flaticon.svg" t="Include" />
+            <e p="Flaticon.ttf" t="Include" />
+            <e p="Flaticon.woff" t="Include" />
+            <e p="Flaticon.woff2" t="Include" />
+            <e p="FontAwesome.otf" t="Include" />
+            <e p="_flaticon.scss" t="Include" />
+            <e p="fa-brands-400.eot" t="Include" />
+            <e p="fa-brands-400.svg" t="Include" />
+            <e p="fa-brands-400.ttf" t="Include" />
+            <e p="fa-brands-400.woff" t="Include" />
+            <e p="fa-brands-400.woff2" t="Include" />
+            <e p="fa-regular-400.eot" t="Include" />
+            <e p="fa-regular-400.svg" t="Include" />
+            <e p="fa-regular-400.ttf" t="Include" />
+            <e p="fa-regular-400.woff" t="Include" />
+            <e p="fa-regular-400.woff2" t="Include" />
+            <e p="fa-solid-900.eot" t="Include" />
+            <e p="fa-solid-900.svg" t="Include" />
+            <e p="fa-solid-900.ttf" t="Include" />
+            <e p="fa-solid-900.woff" t="Include" />
+            <e p="fa-solid-900.woff2" t="Include" />
+            <e p="flaticon.css" t="Include" />
+            <e p="fontawesome-webfont.eot" t="Include" />
+            <e p="fontawesome-webfont.svg" t="Include" />
+            <e p="fontawesome-webfont.ttf" t="Include" />
+            <e p="fontawesome-webfont.woff" t="Include" />
+            <e p="fontawesome-webfont.woff2" t="Include" />
+            <e p="gijgo-material.eot" t="Include" />
+            <e p="gijgo-material.svg" t="Include" />
+            <e p="gijgo-material.ttf" t="Include" />
+            <e p="gijgo-material.woff" t="Include" />
+            <e p="themify.eot" t="Include" />
+            <e p="themify.svg" t="Include" />
+            <e p="themify.ttf" t="Include" />
+            <e p="themify.woff" t="Include" />
+          </e>
+          <e p="img" t="Include">
+            <e p="about" t="Include">
+              <e p="about.png" t="Include" />
+              <e p="about_big.png" t="Include" />
+              <e p="counter.png" t="Include" />
+            </e>
+            <e p="banner" t="Include">
+              <e p="banner.png" t="Include" />
+              <e p="bradcam.png" t="Include" />
+              <e p="illustration.png" t="Include" />
+              <e p="loan.png" t="Include" />
+              <e p="property.png" t="Include" />
+            </e>
+            <e p="blog" t="Include">
+              <e p="author.png" t="Include" />
+              <e p="blog_1.png" t="Include" />
+              <e p="blog_2.png" t="Include" />
+              <e p="blog_3.png" t="Include" />
+              <e p="blog_4.png" t="Include" />
+              <e p="learn_about_bg.png" t="Include" />
+              <e p="single_blog_1.png" t="Include" />
+              <e p="single_blog_2.png" t="Include" />
+              <e p="single_blog_3.png" t="Include" />
+              <e p="single_blog_4.png" t="Include" />
+              <e p="single_blog_5.png" t="Include" />
+              <e p="slide_thumb_1.png" t="Include" />
+            </e>
+            <e p="brand" t="Include">
+              <e p="1.png" t="Include" />
+              <e p="2.png" t="Include" />
+              <e p="3.png" t="Include" />
+              <e p="4.png" t="Include" />
+              <e p="5.png" t="Include" />
+            </e>
+            <e p="candiateds" t="Include">
+              <e p="1.png" t="Include" />
+              <e p="10.png" t="Include" />
+              <e p="2.png" t="Include" />
+              <e p="3.png" t="Include" />
+              <e p="4.png" t="Include" />
+              <e p="5.png" t="Include" />
+              <e p="6.png" t="Include" />
+              <e p="7.png" t="Include" />
+              <e p="8.png" t="Include" />
+              <e p="9.png" t="Include" />
+            </e>
+            <e p="catagory" t="Include">
+              <e p="1.png" t="Include" />
+              <e p="2.png" t="Include" />
+              <e p="3.png" t="Include" />
+              <e p="4.png" t="Include" />
+              <e p="5.png" t="Include" />
+              <e p="6.png" t="Include" />
+              <e p="7.png" t="Include" />
+              <e p="8.png" t="Include" />
+            </e>
+            <e p="comment" t="Include">
+              <e p="comment_1.png" t="Include" />
+              <e p="comment_2.png" t="Include" />
+              <e p="comment_3.png" t="Include" />
+            </e>
+            <e p="elements" t="Include">
+              <e p="a.jpg" t="Include" />
+              <e p="a2.jpg" t="Include" />
+              <e p="d.jpg" t="Include" />
+              <e p="disabled-check.png" t="Include" />
+              <e p="disabled-radio.png" t="Include" />
+              <e p="f1.jpg" t="Include" />
+              <e p="f2.jpg" t="Include" />
+              <e p="f3.jpg" t="Include" />
+              <e p="f4.jpg" t="Include" />
+              <e p="f5.jpg" t="Include" />
+              <e p="f6.jpg" t="Include" />
+              <e p="f7.jpg" t="Include" />
+              <e p="f8.jpg" t="Include" />
+              <e p="g1.jpg" t="Include" />
+              <e p="g2.jpg" t="Include" />
+              <e p="g3.jpg" t="Include" />
+              <e p="g4.jpg" t="Include" />
+              <e p="g5.jpg" t="Include" />
+              <e p="g6.jpg" t="Include" />
+              <e p="g7.jpg" t="Include" />
+              <e p="g8.jpg" t="Include" />
+              <e p="primary-check.png" t="Include" />
+              <e p="primary-radio.png" t="Include" />
+              <e p="success-check.png" t="Include" />
+              <e p="success-radio.png" t="Include" />
+            </e>
+            <e p="explorer" t="Include">
+              <e p="1.png" t="Include" />
+              <e p="2.png" t="Include" />
+              <e p="3.png" t="Include" />
+              <e p="4.png" t="Include" />
+              <e p="5.png" t="Include" />
+              <e p="6.png" t="Include" />
+            </e>
+            <e p="faq" t="Include">
+              <e p="faq.png" t="Include" />
+            </e>
+            <e p="favicon.ico" t="Include" />
+            <e p="favicon.png" t="Include" />
+            <e p="footer_logo.png" t="Include" />
+            <e p="job" t="Include">
+              <e p="1.png" t="Include" />
+              <e p="2.png" t="Include" />
+            </e>
+            <e p="logo.png" t="Include" />
+            <e p="post" t="Include">
+              <e p="next.png" t="Include" />
+              <e p="post_1.png" t="Include" />
+              <e p="post_10.png" t="Include" />
+              <e p="post_2.png" t="Include" />
+              <e p="post_3.png" t="Include" />
+              <e p="post_4.png" t="Include" />
+              <e p="post_5.png" t="Include" />
+              <e p="post_6.png" t="Include" />
+              <e p="post_7.png" t="Include" />
+              <e p="post_8.png" t="Include" />
+              <e p="post_9.png" t="Include" />
+              <e p="preview.png" t="Include" />
+            </e>
+            <e p="property" t="Include">
+              <e p="1.png" t="Include" />
+              <e p="2.png" t="Include" />
+              <e p="3.png" t="Include" />
+              <e p="4.png" t="Include" />
+              <e p="5.png" t="Include" />
+              <e p="6.png" t="Include" />
+            </e>
+            <e p="service" t="Include">
+              <e p="about.png" t="Include" />
+            </e>
+            <e p="svg_icon" t="Include">
+              <e p="1.svg" t="Include" />
+              <e p="2.svg" t="Include" />
+              <e p="3.svg" t="Include" />
+              <e p="4.svg" t="Include" />
+              <e p="5.svg" t="Include" />
+              <e p="6.svg" t="Include" />
+            </e>
+            <e p="testmonial" t="Include">
+              <e p="author.png" t="Include" />
+            </e>
+          </e>
           <e p="js" t="Include">
+            <e p="ajax-form.js" t="Include" />
+            <e p="bootstrap.min.js" t="Include" />
+            <e p="contact.js" t="Include" />
+            <e p="gijgo.min.js" t="Include" />
+            <e p="imagesloaded.pkgd.min.js" t="Include" />
+            <e p="isotope.pkgd.min.js" t="Include" />
+            <e p="jquery-ui.js" t="Include" />
+            <e p="jquery.ajaxchimp.min.js" t="Include" />
+            <e p="jquery.counterup.min.js" t="Include" />
+            <e p="jquery.form.js" t="Include" />
+            <e p="jquery.magnific-popup.min.js" t="Include" />
+            <e p="jquery.scrollUp.min.js" t="Include" />
+            <e p="jquery.slicknav.min.js" t="Include" />
+            <e p="jquery.validate.min.js" t="Include" />
+            <e p="mail-script.js" t="Include" />
+            <e p="main.js" t="Include" />
+            <e p="nice-select.min.js" t="Include" />
+            <e p="owl.carousel.min.js" t="Include" />
+            <e p="plugins.js" t="Include" />
+            <e p="popper.min.js" t="Include" />
+            <e p="range.js" t="Include" />
+            <e p="scrollIt.js" t="Include" />
             <e p="site.js" t="Include" />
+            <e p="vendor" t="Include">
+              <e p="jquery-1.12.4.min.js" t="Include" />
+              <e p="modernizr-3.5.0.min.js" t="Include" />
+            </e>
+            <e p="waypoints.min.js" t="Include" />
+            <e p="wow.min.js" t="Include" />
           </e>
           <e p="lib" t="Include">
             <e p="bootstrap" t="Include">
@@ -232,6 +459,39 @@
               <e p="jquery.validate.unobtrusive.js" t="Include" />
               <e p="jquery.validate.unobtrusive.min.js" t="Include" />
             </e>
+          </e>
+          <e p="scss" t="Include">
+            <e p="_about.scss" t="Include" />
+            <e p="_accordion.scss" t="Include" />
+            <e p="_accordion_area.scss" t="Include" />
+            <e p="_blog.scss" t="Include" />
+            <e p="_blog_part.scss" t="Include" />
+            <e p="_bradcam.scss" t="Include" />
+            <e p="_btn.scss" t="Include" />
+            <e p="_candidates.scss" t="Include" />
+            <e p="_category.scss" t="Include" />
+            <e p="_compani.scss" t="Include" />
+            <e p="_contact.scss" t="Include" />
+            <e p="_elements.scss" t="Include" />
+            <e p="_extend.scss" t="Include" />
+            <e p="_footer.scss" t="Include" />
+            <e p="_header.scss" t="Include" />
+            <e p="_job.scss" t="Include" />
+            <e p="_job_details.scss" t="Include" />
+            <e p="_job_list.scss" t="Include" />
+            <e p="_mixins.scss" t="Include" />
+            <e p="_popular_catagory.scss" t="Include" />
+            <e p="_range.scss" t="Include" />
+            <e p="_responsive.scss" t="Include" />
+            <e p="_section_title.scss" t="Include" />
+            <e p="_service.scss" t="Include" />
+            <e p="_slick-nav.scss" t="Include" />
+            <e p="_slider.scss" t="Include" />
+            <e p="_team.scss" t="Include" />
+            <e p="_testmonial.scss" t="Include" />
+            <e p="_varriable.scss" t="Include" />
+            <e p="style.scss" t="Include" />
+            <e p="theme-default.scss" t="Include" />
           </e>
         </e>
       </e>
