@@ -131,3 +131,5 @@
 /mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/Razor/Views/PhoneLines/Details.cshtml.g.cs
 /mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/Razor/Views/PhoneLines/Edit.cshtml.g.cs
 /mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/Razor/Views/PhoneLines/Index.cshtml.g.cs
+/mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/Razor/Views/TotalCost/CostCenterExpenseLandline.cshtml.g.cs
+/mnt/69F79531507E7A36/CS/MyStuff/Base de Datos II/Proyecto/MVCPhoneService/MVCPhoneServiceWeb/obj/Debug/netcoreapp3.0/Razor/Views/TotalCost/CostCenterExpenseMobile.cshtml.g.cs

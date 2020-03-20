@@ -53,11 +53,15 @@
           <e p="TotalCostController.cs" t="Include" />
         </e>
         <e p="MVCPhoneServiceWeb.csproj" t="IncludeRecursive" />
+        <e p="Pages" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="TotalCostViewModel.cs" t="Include" />
+        </e>
         <e p="Views" t="Include">
           <e p="CallingPlans" t="Include">
             <e p="Create.cshtml" t="Include" />
@@ -146,12 +150,19 @@
             <e p="_LoginPartial.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
           </e>
+          <e p="TotalCost" t="Include">
+            <e p="CostCenterExpenseLandline.cshtml" t="Include" />
+            <e p="CostCenterExpenseMobile.cshtml" t="Include" />
+          </e>
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
         </e>
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="mono_crash.mem.17615.1.blob" t="Include" />
+        <e p="mono_crash.mem.17956.1.blob" t="Include" />
+        <e p="mono_crash.mem.18594.1.blob" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.0" t="Include">
@@ -163,6 +174,7 @@
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
             <e p="site.css" t="Include" />
+            <e p="table.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />
           <e p="js" t="Include">
@@ -240,6 +252,10 @@
           <e p="20200314162552_a9.cs" t="Include" />
           <e p="20200317042041_a34.Designer.cs" t="Include" />
           <e p="20200317042041_a34.cs" t="Include" />
+          <e p="20200320025030_a231.Designer.cs" t="Include" />
+          <e p="20200320025030_a231.cs" t="Include" />
+          <e p="20200320031441_a2313.Designer.cs" t="Include" />
+          <e p="20200320031441_a2313.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Repo.csproj" t="IncludeRecursive" />

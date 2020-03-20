@@ -11,6 +11,7 @@ namespace Data
         public Employee Employee { get; set; }
 
         public string Destination { get; set; }
+        public int LandlinePhoneCallCost { get; set; }
         public int LandlinePhoneCallDuration { get; set; }
         public int LandlinePhoneCallAddressee { get; set; }
     }
