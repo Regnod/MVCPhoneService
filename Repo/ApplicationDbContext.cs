@@ -101,6 +101,8 @@ namespace Repo
                 .HasOne(a => a.Employee)
                 .WithMany(a => a.LandlinePhoneCalls)
                 .HasForeignKey(a => a.EmployeeId);
+            
+            
         }
     }
 }

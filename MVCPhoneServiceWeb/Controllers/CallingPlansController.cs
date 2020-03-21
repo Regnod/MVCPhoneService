@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Data;
 using Microsoft.AspNetCore.Mvc;
@@ -17,9 +18,27 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: CallingPlans
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string callingPlanId,string minutes,string messages)
         {
-            return View(await _context.CallingPlans.ToListAsync());
+            var _callingPlanId = Utils.IntTryParse(callingPlanId);
+            var _minutes = Utils.IntTryParse(minutes);
+            var _messages = Utils.IntTryParse(messages);
+
+            IEnumerable<CallingPlan> callingPlansFiltered = await _context.CallingPlans.ToListAsync();
+            if (_callingPlanId != -1)
+            {
+                callingPlansFiltered = callingPlansFiltered.Where(a => a.CallingPlanId==_callingPlanId);
+            }
+            if (_minutes != -1)
+            {
+                callingPlansFiltered = callingPlansFiltered.Where(a => a.Minutes==_callingPlanId);
+            }
+            if (_messages != -1)
+            {
+                callingPlansFiltered = callingPlansFiltered.Where(a => a.Messages==_messages);
+            }
+
+            return View(callingPlansFiltered);
         }
 
         // GET: CallingPlans/Details/5

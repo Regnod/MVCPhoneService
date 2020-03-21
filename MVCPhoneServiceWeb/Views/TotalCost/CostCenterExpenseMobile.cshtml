@@ -6,7 +6,20 @@
 }
 
 <h1>Cost Center Expenses</h1>
+<form asp-controller="TotalCost" asp-action="CostCenterExpenseMobile">
 
+    <div class="row">
+        <div class="col-2">
+            <input type="text" name="month"/>month
+        </div>
+        <div class="col-2">
+            <input type="text" name="year"/> Year
+        </div>
+
+            <input type="submit" value="filter"/>
+    </div>
+
+</form>
 <table class="table">
     <thead>
     <tr>
@@ -20,7 +33,8 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.CostCenter)

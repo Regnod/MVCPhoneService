@@ -17,8 +17,13 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: DataPlans
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string dataPlanId,string nationalData,string internationalData)
         {
+            var _dataPlan = Utils.IntTryParse(dataPlanId);
+            var _nationalData = Utils.IntTryParse(nationalData);
+            var _intenationalData = Utils.IntTryParse(internationalData);
+
+            //TODO Terminar el filtro de este modelo
             return View(await _context.DataPlans.ToListAsync());
         }
 

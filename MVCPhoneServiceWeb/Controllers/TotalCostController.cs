@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Data;
@@ -17,9 +19,11 @@ namespace MVCPhoneServiceWeb.Controllers
             _context = context;
         }
 
-        //TODO Esto es solamente con las llamadas desde telefonos fijos 
-        public IActionResult CostCenterExpenseLandline()
+        public IActionResult CostCenterExpenseLandline(string month, string year)
         {
+            int _month = Utils.IntTryParse(month);
+            int _year = Utils.IntTryParse(year);
+            
             var join = _context.Employees.Join(
                 _context.LandLinePhoneCalls,
                 a => a.EmployeeId,
@@ -30,7 +34,11 @@ namespace MVCPhoneServiceWeb.Controllers
                     Expense = b.LandlinePhoneCallCost,
                     Date = b.LandlinePhoneCallDateTime
                 });
-           // var a = join.Where(a => a.Date.Day == 12 && a.Date.Month==12);
+            
+            if (_month != -1 && _year != 1)
+            {
+                join = join.Where(a => a.Date.Year == _year && a.Date.Month == _month);
+            }
             List<TotalCostViewModel> viewModel = new List<TotalCostViewModel>();
             if (join.Count() != 0)
             {
@@ -48,8 +56,11 @@ namespace MVCPhoneServiceWeb.Controllers
             return View(viewModel);
         }
 
-        public IActionResult CostCenterExpenseMobile()
+        public IActionResult CostCenterExpenseMobile(string month, string year)
         {
+            int _month = Utils.IntTryParse(month);
+            int _year = Utils.IntTryParse(year);
+
             var join = _context.MobilePhoneCalls.Join(
                 _context.PhoneLineEmployees,
                 a => a.PhoneNumber,
@@ -70,6 +81,12 @@ namespace MVCPhoneServiceWeb.Controllers
                     Expense = a.MobilePhoneCallCost,
                     Date = a.Date
                 });
+            
+            if (_month != -1 && _year != 1)
+            {
+                join2 = join2.Where(a => a.Date.Year == _year && a.Date.Month == _month);
+            }
+            
             List<TotalCostViewModel> viewModel = new List<TotalCostViewModel>();
             if (join2.Count() != 0)
             {

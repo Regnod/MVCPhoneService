@@ -51,7 +51,8 @@ namespace MVCPhoneServiceWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,EmployeeName,CostCenter,PersonalCode")] Employee employee)
+        public async Task<IActionResult> Create([Bind("EmployeeId,EmployeeName,CostCenter,PersonalCode")]
+            Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -59,6 +60,7 @@ namespace MVCPhoneServiceWeb.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(employee);
         }
 
@@ -75,6 +77,7 @@ namespace MVCPhoneServiceWeb.Controllers
             {
                 return NotFound();
             }
+
             return View(employee);
         }
 
@@ -83,7 +86,8 @@ namespace MVCPhoneServiceWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,EmployeeName,CostCenter,PersonalCode")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,EmployeeName,CostCenter,PersonalCode")]
+            Employee employee)
         {
             if (id != employee.EmployeeId)
             {
@@ -108,8 +112,10 @@ namespace MVCPhoneServiceWeb.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(employee);
         }
 

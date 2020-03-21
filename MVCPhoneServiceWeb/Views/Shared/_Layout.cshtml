@@ -11,7 +11,7 @@
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MVCPhoneServiceWeb</a>
+            <a class="navbar-brand"  asp-area="" asp-controller="Home" asp-action="Index">MVCPhoneServiceWeb</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -59,12 +59,15 @@
         </div>
     </nav>
 </header>
-<div class="container">
-    <main role="main" class="pb-3">
-        @RenderBody()
-    </main>
+<div class="slider_area">
+    <div class="single_slider  d-flex align-items-center slider_bg_1">
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+        </main>
+        </div>
+    </div>
 </div>
-
 <footer class="border-top footer text-muted">
     <div class="container">
         &copy; 2020 - MVCPhoneServiceWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

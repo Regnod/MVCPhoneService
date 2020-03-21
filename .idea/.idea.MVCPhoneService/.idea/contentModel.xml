@@ -58,7 +58,9 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
+        <e p="Seed.cs" t="Include" />
         <e p="Startup.cs" t="Include" />
+        <e p="Utils.cs" t="Include" />
         <e p="ViewModels" t="Include">
           <e p="TotalCostViewModel.cs" t="Include" />
         </e>
@@ -160,9 +162,12 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="mono_crash.mem.17615.1.blob" t="Include" />
-        <e p="mono_crash.mem.17956.1.blob" t="Include" />
-        <e p="mono_crash.mem.18594.1.blob" t="Include" />
+        <e p="mono_crash.mem.10873.1.blob" t="Include" />
+        <e p="mono_crash.mem.12624.1.blob" t="Include" />
+        <e p="mono_crash.mem.12914.1.blob" t="Include" />
+        <e p="mono_crash.mem.15009.1.blob" t="Include" />
+        <e p="mono_crash.mem.9469.1.blob" t="Include" />
+        <e p="mono_crash.mem.9826.1.blob" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.0" t="Include">
