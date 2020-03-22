@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Data;
+using Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Repo;
@@ -19,12 +21,23 @@ namespace MVCPhoneServiceWeb.Controllers
         // GET: DataPlans
         public async Task<IActionResult> Index(string dataPlanId,string nationalData,string internationalData)
         {
-            var _dataPlan = Utils.IntTryParse(dataPlanId);
-            var _nationalData = Utils.IntTryParse(nationalData);
-            var _intenationalData = Utils.IntTryParse(internationalData);
+            var _dataPlanId = Utils.Utils.IntTryParse(dataPlanId);
+            var _nationalData = Utils.Utils.IntTryParse(nationalData);
+            var _intenationalData = Utils.Utils.IntTryParse(internationalData);
 
-            //TODO Terminar el filtro de este modelo
-            return View(await _context.DataPlans.ToListAsync());
+            IEnumerable<DataPlan> dataPlans = await _context.DataPlans.ToListAsync();
+            if (_dataPlanId != -1)
+            {
+                dataPlans = dataPlans.Where(a => a.DataPlanId == _dataPlanId);
+            }
+            if (_nationalData != -1)
+            {
+                dataPlans = dataPlans.Where(a => a.NationalData == _nationalData);
+            } if (_intenationalData != -1)
+            {
+                dataPlans = dataPlans.Where(a => a.InternationalData == _intenationalData);
+            }
+            return View(dataPlans);
         }
 
         // GET: DataPlans/Details/5

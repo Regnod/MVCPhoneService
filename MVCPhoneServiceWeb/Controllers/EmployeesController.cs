@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Data;
+using Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Repo;
@@ -17,9 +19,29 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: Employees
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string employeeId,string name,string costCenter,string personalCode)
         {
-            return View(await _context.Employees.ToListAsync());
+            var _employeeId = Utils.Utils.IntTryParse(employeeId);
+            var _personalCode = Utils.Utils.IntTryParse(personalCode);
+
+            IEnumerable<Employee> employees = await _context.Employees.ToListAsync();
+            if (_employeeId != -1)
+            {
+                employees = employees.Where(a => a.EmployeeId == _employeeId);
+            }
+            if (name != null)
+            {
+                employees = employees.Where(a => a.EmployeeName == name);
+            }
+            if (costCenter != null)
+            {
+                employees = employees.Where(a => a.CostCenter == costCenter);
+            }
+            if (_personalCode != -1)
+            {
+                employees = employees.Where(a => a.PersonalCode == _personalCode);
+            }
+            return View(employees);
         }
 
         // GET: Employees/Details/5

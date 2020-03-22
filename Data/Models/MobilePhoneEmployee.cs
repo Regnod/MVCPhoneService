@@ -1,6 +1,4 @@
-using System.ComponentModel.DataAnnotations;
-
-namespace Data
+namespace Data.Models
 {
     public class MobilePhoneEmployee
     {

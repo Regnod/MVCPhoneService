@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Data
+namespace Data.Models
 {
     public class MobilePhone
     {

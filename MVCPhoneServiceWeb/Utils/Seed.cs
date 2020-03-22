@@ -1,8 +1,7 @@
-using Data;
-using Microsoft.EntityFrameworkCore;
+using Data.Models;
 using Repo;
 
-namespace MVCPhoneServiceWeb
+namespace MVCPhoneServiceWeb.Utils
 {
     public static class Seed
     {

@@ -1,4 +1,4 @@
-namespace MVCPhoneServiceWeb
+namespace MVCPhoneServiceWeb.Utils
 {
     public static class Utils
     {

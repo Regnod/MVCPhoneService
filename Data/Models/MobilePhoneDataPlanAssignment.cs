@@ -1,6 +1,6 @@
 using System;
 
-namespace Data
+namespace Data.Models
 {
     public class MobilePhoneDataPlanAssignment
     {

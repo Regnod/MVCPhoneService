@@ -1,4 +1,4 @@
-namespace MVCPhoneServiceWeb.ViewModels
+namespace Data.ViewModels
 {
     public class TotalCostViewModel
     {

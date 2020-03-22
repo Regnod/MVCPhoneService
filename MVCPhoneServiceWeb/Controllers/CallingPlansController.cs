@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Data;
+using Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Repo;
@@ -20,9 +21,9 @@ namespace MVCPhoneServiceWeb.Controllers
         // GET: CallingPlans
         public async Task<IActionResult> Index(string callingPlanId,string minutes,string messages)
         {
-            var _callingPlanId = Utils.IntTryParse(callingPlanId);
-            var _minutes = Utils.IntTryParse(minutes);
-            var _messages = Utils.IntTryParse(messages);
+            var _callingPlanId = Utils.Utils.IntTryParse(callingPlanId);
+            var _minutes = Utils.Utils.IntTryParse(minutes);
+            var _messages = Utils.Utils.IntTryParse(messages);
 
             IEnumerable<CallingPlan> callingPlansFiltered = await _context.CallingPlans.ToListAsync();
             if (_callingPlanId != -1)

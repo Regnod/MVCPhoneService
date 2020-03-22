@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Data.LandlinePhoneCall>
+﻿@model IEnumerable<Data.Models.LandlinePhoneCall>
 
 @{
     ViewData["Title"] = "Index";
@@ -12,24 +12,28 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Destination)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LandlinePhoneCallDuration)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LandlinePhoneCallAddressee)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandlinePhoneCallDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandlinePhoneCallAddressee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandlinePhoneCallCost)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Employee.EmployeeId)
@@ -44,11 +48,14 @@
                 @Html.DisplayFor(modelItem => item.LandlinePhoneCallAddressee)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.DisplayFor(modelItem => item.LandlinePhoneCallCost)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {extension = item.Extension, dateTime = item.LandlinePhoneCallDateTime, employeeId = item.EmployeeId /* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Details", "Details", new {extension = item.Extension, dateTime = item.LandlinePhoneCallDateTime, employeeId = item.EmployeeId /* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Delete", "Delete", new {extension = item.Extension, dateTime = item.LandlinePhoneCallDateTime, employeeId = item.EmployeeId/* id=item.PrimaryKey */})
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using Data;
+using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;

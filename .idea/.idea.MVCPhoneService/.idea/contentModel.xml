@@ -6,19 +6,24 @@
     <e p="$USER_HOME$/.Rider2019.3/system/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_MVCPhoneService.2071779703.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Data" t="IncludeRecursive">
-        <e p="CallingPlan.cs" t="Include" />
         <e p="Data.csproj" t="IncludeRecursive" />
-        <e p="DataPlan.cs" t="Include" />
-        <e p="Employee.cs" t="Include" />
-        <e p="ErrorViewModel.cs" t="Include" />
-        <e p="LandlinePhoneCall.cs" t="Include" />
-        <e p="MobilePhone.cs" t="Include" />
-        <e p="MobilePhoneCall.cs" t="Include" />
-        <e p="MobilePhoneCallingPlanAssignment.cs" t="Include" />
-        <e p="MobilePhoneDataPlanAssignment.cs" t="Include" />
-        <e p="MobilePhoneEmployee.cs" t="Include" />
-        <e p="PhoneLine.cs" t="Include" />
-        <e p="PhoneLineEmployee.cs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="CallingPlan.cs" t="Include" />
+          <e p="DataPlan.cs" t="Include" />
+          <e p="Employee.cs" t="Include" />
+          <e p="ErrorViewModel.cs" t="Include" />
+          <e p="LandlinePhoneCall.cs" t="Include" />
+          <e p="MobilePhone.cs" t="Include" />
+          <e p="MobilePhoneCall.cs" t="Include" />
+          <e p="MobilePhoneCallingPlanAssignment.cs" t="Include" />
+          <e p="MobilePhoneDataPlanAssignment.cs" t="Include" />
+          <e p="MobilePhoneEmployee.cs" t="Include" />
+          <e p="PhoneLine.cs" t="Include" />
+          <e p="PhoneLineEmployee.cs" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="TotalCostViewModel.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -58,11 +63,10 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
-        <e p="Seed.cs" t="Include" />
         <e p="Startup.cs" t="Include" />
-        <e p="Utils.cs" t="Include" />
-        <e p="ViewModels" t="Include">
-          <e p="TotalCostViewModel.cs" t="Include" />
+        <e p="Utils" t="Include">
+          <e p="Seed.cs" t="Include" />
+          <e p="Utils.cs" t="Include" />
         </e>
         <e p="Views" t="Include">
           <e p="CallingPlans" t="Include">
@@ -162,12 +166,14 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="mono_crash.mem.10873.1.blob" t="Include" />
-        <e p="mono_crash.mem.12624.1.blob" t="Include" />
-        <e p="mono_crash.mem.12914.1.blob" t="Include" />
-        <e p="mono_crash.mem.15009.1.blob" t="Include" />
-        <e p="mono_crash.mem.9469.1.blob" t="Include" />
-        <e p="mono_crash.mem.9826.1.blob" t="Include" />
+        <e p="mono_crash.mem.26132.1.blob" t="Include" />
+        <e p="mono_crash.mem.26914.1.blob" t="Include" />
+        <e p="mono_crash.mem.28878.1.blob" t="Include" />
+        <e p="mono_crash.mem.31435.1.blob" t="Include" />
+        <e p="mono_crash.mem.31910.1.blob" t="Include" />
+        <e p="mono_crash.mem.32162.1.blob" t="Include" />
+        <e p="mono_crash.mem.459.1.blob" t="Include" />
+        <e p="mono_crash.mem.804.1.blob" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.0" t="Include">
