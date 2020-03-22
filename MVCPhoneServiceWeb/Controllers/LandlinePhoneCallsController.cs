@@ -212,7 +212,13 @@ namespace MVCPhoneServiceWeb.Controllers
 
         private bool LandlinePhoneCallExists(LandlinePhoneCall l)
         {
-            return _context.LandLinePhoneCalls.Any(e => e.Extension == l.Extension && e.Destination==l.Destination && l.Employee==e.Employee && l.LandlinePhoneCallAddressee==e.LandlinePhoneCallAddressee && l.LandlinePhoneCallCost==e.LandlinePhoneCallCost && l.LandlinePhoneCallDuration==e.LandlinePhoneCallDuration && l.LandlinePhoneCallDateTime==e.LandlinePhoneCallDateTime);
+            return _context.LandLinePhoneCalls.Any(e => e.Extension == l.Extension && 
+                                                        e.Destination==l.Destination && 
+                                                        l.Employee==e.Employee && 
+                                                        l.LandlinePhoneCallAddressee==e.LandlinePhoneCallAddressee && 
+                                                        l.LandlinePhoneCallCost==e.LandlinePhoneCallCost && 
+                                                        l.LandlinePhoneCallDuration==e.LandlinePhoneCallDuration && 
+                                                        l.LandlinePhoneCallDateTime==e.LandlinePhoneCallDateTime);
         }
     }
 }

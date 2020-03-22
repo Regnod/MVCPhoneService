@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Data;
 using Data.Models;
@@ -26,9 +27,9 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: MobilePhoneCallingPlanAssignments/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? phoneNumber,DateTime? dateTime,int? callingPlanId)
         {
-            if (id == null)
+            if (phoneNumber == null || dateTime==null || callingPlanId ==null)
             {
                 return NotFound();
             }
@@ -36,7 +37,7 @@ namespace MVCPhoneServiceWeb.Controllers
             var mobilePhoneCallingPlanAssignment = await _context.MobilePhoneCallingPlanAssignments
                 .Include(m => m.CallingPlan)
                 .Include(m => m.PhoneLine)
-                .FirstOrDefaultAsync(m => m.PhoneNumber == id);
+                .FirstOrDefaultAsync(m => m.PhoneNumber == phoneNumber && m.CallingPlanAssignmentDateTime==dateTime && m.CallingPlanId==callingPlanId);
             if (mobilePhoneCallingPlanAssignment == null)
             {
                 return NotFound();
@@ -72,14 +73,14 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: MobilePhoneCallingPlanAssignments/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? phoneNumber,DateTime? dateTime,int? callingPlanId)
         {
-            if (id == null)
+            if (phoneNumber == null || dateTime==null || callingPlanId ==null)
             {
                 return NotFound();
             }
 
-            var mobilePhoneCallingPlanAssignment = await _context.MobilePhoneCallingPlanAssignments.FindAsync(id);
+            var mobilePhoneCallingPlanAssignment = await _context.MobilePhoneCallingPlanAssignments.FindAsync(phoneNumber,dateTime,callingPlanId);
             if (mobilePhoneCallingPlanAssignment == null)
             {
                 return NotFound();
@@ -94,9 +95,9 @@ namespace MVCPhoneServiceWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PhoneNumber,CallingPlanAssignmentDateTime,CallingPlanId,MinutesConsumed,MessagesSent")] MobilePhoneCallingPlanAssignment mobilePhoneCallingPlanAssignment)
+        public async Task<IActionResult> Edit([Bind("PhoneNumber,CallingPlanAssignmentDateTime,CallingPlanId,MinutesConsumed,MessagesSent")] MobilePhoneCallingPlanAssignment mobilePhoneCallingPlanAssignment)
         {
-            if (id != mobilePhoneCallingPlanAssignment.PhoneNumber)
+            if (MobilePhoneCallingPlanAssignmentExists( mobilePhoneCallingPlanAssignment))
             {
                 return NotFound();
             }
@@ -110,7 +111,7 @@ namespace MVCPhoneServiceWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MobilePhoneCallingPlanAssignmentExists(mobilePhoneCallingPlanAssignment.PhoneNumber))
+                    if (!MobilePhoneCallingPlanAssignmentExists(mobilePhoneCallingPlanAssignment))
                     {
                         return NotFound();
                     }
@@ -127,9 +128,9 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: MobilePhoneCallingPlanAssignments/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? phoneNumber,DateTime? dateTime,int? callingPlanId)
         {
-            if (id == null)
+            if (phoneNumber == null || dateTime==null || callingPlanId ==null)
             {
                 return NotFound();
             }
@@ -137,7 +138,7 @@ namespace MVCPhoneServiceWeb.Controllers
             var mobilePhoneCallingPlanAssignment = await _context.MobilePhoneCallingPlanAssignments
                 .Include(m => m.CallingPlan)
                 .Include(m => m.PhoneLine)
-                .FirstOrDefaultAsync(m => m.PhoneNumber == id);
+                .FirstOrDefaultAsync(m => m.PhoneNumber == phoneNumber && m.CallingPlanAssignmentDateTime==dateTime && m.CallingPlanId==callingPlanId);
             if (mobilePhoneCallingPlanAssignment == null)
             {
                 return NotFound();
@@ -149,17 +150,21 @@ namespace MVCPhoneServiceWeb.Controllers
         // POST: MobilePhoneCallingPlanAssignments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed([Bind("PhoneNumber,CallingPlanAssignmentDateTime,CallingPlanId,MinutesConsumed,MessagesSent")] MobilePhoneCallingPlanAssignment mobilePhoneCallingPlanAssignment)
         {
-            var mobilePhoneCallingPlanAssignment = await _context.MobilePhoneCallingPlanAssignments.FindAsync(id);
-            _context.MobilePhoneCallingPlanAssignments.Remove(mobilePhoneCallingPlanAssignment);
+            var _mobilePhoneCallingPlanAssignment = await _context.MobilePhoneCallingPlanAssignments.FindAsync(mobilePhoneCallingPlanAssignment.PhoneNumber,mobilePhoneCallingPlanAssignment.CallingPlanAssignmentDateTime,mobilePhoneCallingPlanAssignment.CallingPlanId);
+            _context.MobilePhoneCallingPlanAssignments.Remove(_mobilePhoneCallingPlanAssignment);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MobilePhoneCallingPlanAssignmentExists(int id)
+        private bool MobilePhoneCallingPlanAssignmentExists(MobilePhoneCallingPlanAssignment m)
         {
-            return _context.MobilePhoneCallingPlanAssignments.Any(e => e.PhoneNumber == id);
+            return _context.MobilePhoneCallingPlanAssignments.Any(e => e.PhoneNumber == m.PhoneNumber &&
+                                                                       e.MessagesSent==m.MessagesSent &&
+                                                                       e.MinutesConsumed==m.MinutesConsumed &&
+                                                                       e.CallingPlanId==m.CallingPlanId &&
+                                                                       e.CallingPlanAssignmentDateTime==m.CallingPlanAssignmentDateTime);
         }
     }
 }
