@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Data;
 using Data.Models;
@@ -26,9 +27,9 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: MobilePhoneDataPlanAssignments/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? phoneNumber,DateTime? dateTime,int? dataPlanId)
         {
-            if (id == null)
+            if (phoneNumber == null || dateTime==null || dataPlanId==null)
             {
                 return NotFound();
             }
@@ -36,7 +37,7 @@ namespace MVCPhoneServiceWeb.Controllers
             var mobilePhoneDataPlanAssignment = await _context.MobilePhoneDataPlanAssignments
                 .Include(m => m.DataPlan)
                 .Include(m => m.PhoneLine)
-                .FirstOrDefaultAsync(m => m.PhoneNumber == id);
+                .FirstOrDefaultAsync(m => m.PhoneNumber == phoneNumber && m.DataPlanAssignmentDateTime==dateTime && m.DataPlanId==dataPlanId);
             if (mobilePhoneDataPlanAssignment == null)
             {
                 return NotFound();
@@ -72,14 +73,14 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: MobilePhoneDataPlanAssignments/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? phoneNumber,DateTime? dateTime,int? dataPlanId)
         {
-            if (id == null)
+            if (phoneNumber == null || dateTime==null || dataPlanId==null)
             {
                 return NotFound();
             }
 
-            var mobilePhoneDataPlanAssignment = await _context.MobilePhoneDataPlanAssignments.FindAsync(id);
+            var mobilePhoneDataPlanAssignment = await _context.MobilePhoneDataPlanAssignments.FindAsync(phoneNumber,dateTime,dataPlanId);
             if (mobilePhoneDataPlanAssignment == null)
             {
                 return NotFound();
@@ -94,9 +95,9 @@ namespace MVCPhoneServiceWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PhoneNumber,DataPlanAssignmentDateTime,DataPlanId,NationalDataUsage,InternationalDataUsage")] MobilePhoneDataPlanAssignment mobilePhoneDataPlanAssignment)
+        public async Task<IActionResult> Edit([Bind("PhoneNumber,DataPlanAssignmentDateTime,DataPlanId,NationalDataUsage,InternationalDataUsage")] MobilePhoneDataPlanAssignment mobilePhoneDataPlanAssignment)
         {
-            if (id != mobilePhoneDataPlanAssignment.PhoneNumber)
+            if (MobilePhoneDataPlanAssignmentExists(mobilePhoneDataPlanAssignment))
             {
                 return NotFound();
             }
@@ -110,7 +111,7 @@ namespace MVCPhoneServiceWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MobilePhoneDataPlanAssignmentExists(mobilePhoneDataPlanAssignment.PhoneNumber))
+                    if (!MobilePhoneDataPlanAssignmentExists(mobilePhoneDataPlanAssignment))
                     {
                         return NotFound();
                     }
@@ -127,9 +128,9 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: MobilePhoneDataPlanAssignments/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete( int? phoneNumber,DateTime? dateTime,int? dataPlanId)
         {
-            if (id == null)
+            if (phoneNumber == null || dateTime==null || dataPlanId==null)
             {
                 return NotFound();
             }
@@ -137,7 +138,7 @@ namespace MVCPhoneServiceWeb.Controllers
             var mobilePhoneDataPlanAssignment = await _context.MobilePhoneDataPlanAssignments
                 .Include(m => m.DataPlan)
                 .Include(m => m.PhoneLine)
-                .FirstOrDefaultAsync(m => m.PhoneNumber == id);
+                .FirstOrDefaultAsync(m => m.PhoneNumber == phoneNumber && m.DataPlanAssignmentDateTime==dateTime && m.DataPlanId==dataPlanId);
             if (mobilePhoneDataPlanAssignment == null)
             {
                 return NotFound();
@@ -149,17 +150,21 @@ namespace MVCPhoneServiceWeb.Controllers
         // POST: MobilePhoneDataPlanAssignments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed([Bind("PhoneNumber,DataPlanAssignmentDateTime,DataPlanId,NationalDataUsage,InternationalDataUsage")] MobilePhoneDataPlanAssignment mobilePhoneDataPlanAssignment)
         {
-            var mobilePhoneDataPlanAssignment = await _context.MobilePhoneDataPlanAssignments.FindAsync(id);
-            _context.MobilePhoneDataPlanAssignments.Remove(mobilePhoneDataPlanAssignment);
+            var _mobilePhoneDataPlanAssignment = await _context.MobilePhoneDataPlanAssignments.FindAsync(mobilePhoneDataPlanAssignment.PhoneNumber,mobilePhoneDataPlanAssignment.DataPlanAssignmentDateTime,mobilePhoneDataPlanAssignment.DataPlanId);
+            _context.MobilePhoneDataPlanAssignments.Remove(_mobilePhoneDataPlanAssignment);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MobilePhoneDataPlanAssignmentExists(int id)
+        private bool MobilePhoneDataPlanAssignmentExists(MobilePhoneDataPlanAssignment m)
         {
-            return _context.MobilePhoneDataPlanAssignments.Any(e => e.PhoneNumber == id);
+            return _context.MobilePhoneDataPlanAssignments.Any(e => e.PhoneNumber == m.PhoneNumber &&
+                                                                    e.DataPlanId==m.DataPlanId &&
+                                                                    e.DataPlanAssignmentDateTime==m.DataPlanAssignmentDateTime &&
+                                                                    e.InternationalDataUsage==m.InternationalDataUsage &&
+                                                                    e.NationalDataUsage==m.NationalDataUsage);
         }
     }
 }

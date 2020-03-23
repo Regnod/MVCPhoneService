@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using Data;
 using Data.Models;
@@ -26,9 +28,9 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: MobilePhoneCalls/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? phoneNumber,int? imei, DateTime? dateTime)
         {
-            if (id == null)
+            if (phoneNumber== null || imei == null || dateTime==null )
             {
                 return NotFound();
             }
@@ -36,7 +38,7 @@ namespace MVCPhoneServiceWeb.Controllers
             var mobilePhoneCall = await _context.MobilePhoneCalls
                 .Include(m => m.MobilePhone)
                 .Include(m => m.PhoneLine)
-                .FirstOrDefaultAsync(m => m.PhoneNumber == id);
+                .FirstOrDefaultAsync(m => m.PhoneNumber == phoneNumber && m.IMEI==imei && m.DateTime==dateTime);
             if (mobilePhoneCall == null)
             {
                 return NotFound();
@@ -72,14 +74,14 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: MobilePhoneCalls/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? phoneNumber,int? imei, DateTime? dateTime)
         {
-            if (id == null)
+            if (phoneNumber== null || imei == null || dateTime==null )
             {
                 return NotFound();
             }
 
-            var mobilePhoneCall = await _context.MobilePhoneCalls.FindAsync(id);
+            var mobilePhoneCall = await _context.MobilePhoneCalls.FindAsync(phoneNumber,imei,dateTime);
             if (mobilePhoneCall == null)
             {
                 return NotFound();
@@ -94,9 +96,9 @@ namespace MVCPhoneServiceWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PhoneNumber,IMEI,DateTime,MobilePhoneCallAddressee,MobilePhoneCallDuration,MobilePhoneCallCost")] MobilePhoneCall mobilePhoneCall)
+        public async Task<IActionResult> Edit([Bind("PhoneNumber,IMEI,DateTime,MobilePhoneCallAddressee,MobilePhoneCallDuration,MobilePhoneCallCost")] MobilePhoneCall mobilePhoneCall)
         {
-            if (id != mobilePhoneCall.PhoneNumber)
+            if (MobilePhoneCallExists(mobilePhoneCall))
             {
                 return NotFound();
             }
@@ -110,7 +112,7 @@ namespace MVCPhoneServiceWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MobilePhoneCallExists(mobilePhoneCall.PhoneNumber))
+                    if (!MobilePhoneCallExists(mobilePhoneCall))
                     {
                         return NotFound();
                     }
@@ -127,9 +129,9 @@ namespace MVCPhoneServiceWeb.Controllers
         }
 
         // GET: MobilePhoneCalls/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? phoneNumber,int? imei, DateTime? dateTime)
         {
-            if (id == null)
+            if (phoneNumber== null || imei == null || dateTime==null )
             {
                 return NotFound();
             }
@@ -137,7 +139,7 @@ namespace MVCPhoneServiceWeb.Controllers
             var mobilePhoneCall = await _context.MobilePhoneCalls
                 .Include(m => m.MobilePhone)
                 .Include(m => m.PhoneLine)
-                .FirstOrDefaultAsync(m => m.PhoneNumber == id);
+                .FirstOrDefaultAsync(m => m.PhoneNumber == phoneNumber && m.IMEI==imei && m.DateTime==dateTime);
             if (mobilePhoneCall == null)
             {
                 return NotFound();
@@ -149,17 +151,22 @@ namespace MVCPhoneServiceWeb.Controllers
         // POST: MobilePhoneCalls/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed([Bind("PhoneNumber,IMEI,DateTime,MobilePhoneCallAddressee,MobilePhoneCallDuration,MobilePhoneCallCost")] MobilePhoneCall mobilePhoneCall)
         {
-            var mobilePhoneCall = await _context.MobilePhoneCalls.FindAsync(id);
-            _context.MobilePhoneCalls.Remove(mobilePhoneCall);
+            var _mobilePhoneCall = await _context.MobilePhoneCalls.FindAsync(mobilePhoneCall.PhoneNumber,mobilePhoneCall.IMEI,mobilePhoneCall.DateTime);
+            _context.MobilePhoneCalls.Remove(_mobilePhoneCall);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MobilePhoneCallExists(int id)
+        private bool MobilePhoneCallExists(MobilePhoneCall m)
         {
-            return _context.MobilePhoneCalls.Any(e => e.PhoneNumber == id);
+            return _context.MobilePhoneCalls.Any(e => e.PhoneNumber == m.PhoneNumber &&
+                                                      e.DateTime==m.DateTime &&
+                                                      e.IMEI==m.IMEI &&
+                                                      e.MobilePhoneCallAddressee==m.MobilePhoneCallAddressee &&
+                                                      e.MobilePhoneCallCost==m.MobilePhoneCallCost &&
+                                                      e.MobilePhoneCallDuration==m.MobilePhoneCallDuration);
         }
     }
 }

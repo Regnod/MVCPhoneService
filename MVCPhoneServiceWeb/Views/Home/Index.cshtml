@@ -1,28 +1,48 @@
-﻿@{
+﻿@using Chart.Mvc.Core.ComplexChart
+@using Chart.Mvc.Core.ComplexChart.Bar
+@using Chart.Mvc.Core.Extensions
+@{
     ViewData["Title"] = "Home Page";
 }
-@* <div class="slider_area"> *@
-@*     <div class="single_slider  d-flex align-items-center slider_bg_1"> *@
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 col-md-6">
-                    <div class="slider_text">
-                        <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">4536+ Jobs listed</h5>
-                        <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Find your Dream Job</h3>
-                        <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">We provide online instant cash loans with quick approval that suit your term length</p>
-                        <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
-                            <a href="#" class="boxed-btn3">Upload your Resume</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @* </div> *@
-    <div class="ilstration_img wow fadeInRight d-none d-lg-block text-right" data-wow-duration="1s" data-wow-delay=".2s">
-        <img src="~/img/banner/illustration.png" alt="">
-     </div>
-@* </div> *@
-@* <div class="text-center"> *@
-@*     <h1 class="display-4">Welcome</h1> *@
-@*     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> *@
-@* </div> *@
+<script src="~/js/Chart.js"></script>
+<script src="~/js/Chart.min.js"></script>
+<script src="~/css/Chart.css"></script>
+<script src="~/css/Chart.min.css"></script>
+
+ @{
+      var barChart = new BarChart();
+      barChart.ComplexData.Labels.AddRange(new []{ "January", "February",  "March", "April", "May", "June", "July"});
+      barChart.ComplexData.Datasets.AddRange(new List<ComplexDataset>
+                             { 
+                                new ComplexDataset
+                                    {
+                                        Data = new List<double> { 65, 59, 80, 81, 56, 55, 40 },
+                                        Label = "My First dataset",
+                                        // FillColor = "rgba(220,220,220,0.2)",
+                                        // StrokeColor = "rgba(220,220,220,1)",
+                                        // PointColor = "rgba(220,220,220,1)",
+                                        // PointStrokeColor = "#fff",
+                                        // PointHighlightFill = "#fff",
+                                        // PointHighlightStroke = "rgba(220,220,220,1)",
+                                    }, 
+                                new ComplexDataset
+                                    {
+                                        Data = new List<double> { 28, 48, 40, 19, 86, 27, 90 },
+                                        Label = "My Second dataset",
+                                        BackgroundColor = "rgba(251,187,205,1.2)",
+                                        // StrokeColor = "rgba(151,187,205,1)",
+                                        // PointColor = "rgba(151,187,205,1)",
+                                        // PointStrokeColor = "#fff",
+                                        // PointHighlightFill = "#fff",
+                                        // PointHighlightStroke = "rgba(151,187,205,1)",
+                                    }
+                            });
+  }
+  <div class="text-center">
+      <h1 class="display-4">Welcome</h1>
+      <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+  </div>
+  <canvas id="myCanvas" width="400" height="100"></canvas>
+  @Html.CreateChart("myCanvas", barChart)
+
+

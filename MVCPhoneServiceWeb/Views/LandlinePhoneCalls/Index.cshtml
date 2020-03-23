@@ -14,7 +14,13 @@
     <thead>
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Extension)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Employee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandlinePhoneCallDateTime)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Destination)
@@ -36,7 +42,13 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Extension)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Employee.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LandlinePhoneCallDateTime)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Destination)
@@ -53,7 +65,7 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new {extension = item.Extension, dateTime = item.LandlinePhoneCallDateTime, employeeId = item.EmployeeId /* id=item.PrimaryKey */}) |
                 @Html.ActionLink("Details", "Details", new {extension = item.Extension, dateTime = item.LandlinePhoneCallDateTime, employeeId = item.EmployeeId /* id=item.PrimaryKey */}) |
-                @Html.ActionLink("Delete", "Delete", new {extension = item.Extension, dateTime = item.LandlinePhoneCallDateTime, employeeId = item.EmployeeId/* id=item.PrimaryKey */})
+                @Html.ActionLink("Delete", "Delete", new {extension = item.Extension, dateTime = item.LandlinePhoneCallDateTime, employeeId = item.EmployeeId /* id=item.PrimaryKey */})
             </td>
         </tr>
     }

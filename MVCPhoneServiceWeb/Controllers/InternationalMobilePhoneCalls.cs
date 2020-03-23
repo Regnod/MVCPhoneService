@@ -2,17 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Data.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Repo;
 
 namespace MVCPhoneServiceWeb.Controllers
 {
-    public class InternationalMobilePhoneCall : Controller
+    public class InternationalMobilePhoneCalls : Controller
     {
         private ApplicationDbContext _context;
 
-        public InternationalMobilePhoneCall(ApplicationDbContext context)
+        public InternationalMobilePhoneCalls(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -60,16 +61,38 @@ namespace MVCPhoneServiceWeb.Controllers
                 join2 = join2.Where(a => a.DateTime.Year == _year);
             }
 
-            Dictionary<int,int> phoneNumberInterExpenses = new Dictionary<int, int>();
+            Dictionary<int, int> phoneNumberInterExpenses = new Dictionary<int, int>();
+            int total = 0;
             foreach (var item in join2)
             {
                 //if (item.Addresse.ToString()[^1] == '1')
                 {
-                    int cost;
-                    if(phoneNumberInterExpenses.TryGetValue())
+                    int expense;
+                    if (phoneNumberInterExpenses.TryGetValue(item.PhoneNumber, out expense))
+                    {
+                        phoneNumberInterExpenses[item.PhoneNumber] = expense + item.Cost;
+                    }
+                    else
+                    {
+                        phoneNumberInterExpenses.Add(item.PhoneNumber, item.Cost);
+                    }
+                    total += item.Cost;
                 }
             }
-            return View();
+            List<InternationalMobilePhoneCall> model = new List<InternationalMobilePhoneCall>();
+            foreach (var item in phoneNumberInterExpenses)
+            {
+                var a = join2.First(a => a.PhoneNumber == item.Key);
+                model.Add(new InternationalMobilePhoneCall()
+                {
+                    EmployeId = a.EmployeeId,
+                    EmployeeName = a.EmployeeName,
+                    PhoneNumber = a.PhoneNumber,
+                    Expense = item.Value,
+                    Percent = (item.Value/total)*100 
+                });
+            }
+            return View(model);
         }
     }
 }

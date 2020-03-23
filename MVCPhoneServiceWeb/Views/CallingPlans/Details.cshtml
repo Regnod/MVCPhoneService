@@ -9,18 +9,24 @@
 
 <div>
     <h4>CallingPlan</h4>
-    <hr />
+    <hr/>
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CallingPlanId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CallingPlanId)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Minutes)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Minutes)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Messages)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Messages)
         </dd>
     </dl>

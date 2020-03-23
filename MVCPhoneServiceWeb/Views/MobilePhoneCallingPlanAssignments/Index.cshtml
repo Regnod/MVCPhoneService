@@ -12,24 +12,28 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneLine)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CallingPlan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MinutesConsumed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MessagesSent)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CallingPlanId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CallingPlanAssignmentDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinutesConsumed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessagesSent)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.PhoneLine.PhoneNumber)
@@ -38,17 +42,20 @@
                 @Html.DisplayFor(modelItem => item.CallingPlan.CallingPlanId)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.CallingPlanAssignmentDateTime)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.MinutesConsumed)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MessagesSent)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { phoneNumber=item.PhoneNumber,dateTime=item.CallingPlanAssignmentDateTime,callingPlanId=item.CallingPlanId/* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { phoneNumber=item.PhoneNumber,dateTime=item.CallingPlanAssignmentDateTime,callingPlanId=item.CallingPlanId /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new{ phoneNumber=item.PhoneNumber,dateTime=item.CallingPlanAssignmentDateTime,callingPlanId=item.CallingPlanId /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new {phoneNumber = item.PhoneNumber, dateTime = item.CallingPlanAssignmentDateTime, callingPlanId = item.CallingPlanId /* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Details", "Details", new {phoneNumber = item.PhoneNumber, dateTime = item.CallingPlanAssignmentDateTime, callingPlanId = item.CallingPlanId /* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Delete", "Delete", new {phoneNumber = item.PhoneNumber, dateTime = item.CallingPlanAssignmentDateTime, callingPlanId = item.CallingPlanId /* id=item.PrimaryKey */})
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

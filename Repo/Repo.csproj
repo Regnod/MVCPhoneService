@@ -9,6 +9,7 @@
     </ItemGroup>
 
      <ItemGroup>
+        <PackageReference Include="Chart.Mvc.Core" Version="1.1.0" />
         <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />

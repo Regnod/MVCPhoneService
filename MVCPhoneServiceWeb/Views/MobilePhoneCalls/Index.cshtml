@@ -57,9 +57,9 @@
                 @Html.DisplayFor(modelItem => item.MobilePhoneCallCost)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
-                @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
-                @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+                @Html.ActionLink("Edit", "Edit", new {phoneNumber=item.PhoneNumber,imei=item.IMEI,dateTime=item.DateTime/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Details", "Details", new {phoneNumber=item.PhoneNumber,imei=item.IMEI,dateTime=item.DateTime/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Delete", "Delete", new {phoneNumber=item.PhoneNumber,imei=item.IMEI,dateTime=item.DateTime/* id=item.PrimaryKey */})
             </td>
         </tr>
     }

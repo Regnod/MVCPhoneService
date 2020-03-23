@@ -51,9 +51,9 @@
                 @Html.DisplayFor(modelItem => item.InternationalDataUsage)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
-                @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
-                @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+                @Html.ActionLink("Edit", "Edit", new {phoneNumber=item.PhoneNumber,dateTime=item.DataPlanAssignmentDateTime,dataPlanId=item.DataPlanId/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Details", "Details", new {phoneNumber=item.PhoneNumber,dateTime=item.DataPlanAssignmentDateTime,dataPlanId=item.DataPlanId/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Delete", "Delete", new {phoneNumber=item.PhoneNumber,dateTime=item.DataPlanAssignmentDateTime,dataPlanId=item.DataPlanId/* id=item.PrimaryKey */})
             </td>
         </tr>
     }
