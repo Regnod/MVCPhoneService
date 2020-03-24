@@ -8,28 +8,33 @@
 <h1>Create</h1>
 
 <h4>Employee</h4>
-<hr />
+<hr/>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group"> *@
+            @*     <label asp-for="EmployeeId" class="control-label"></label> *@
+            @*     <input asp-for="EmployeeId" class="form-control"/> *@
+            @*     <span asp-validation-for="EmployeeId" class="text-danger"></span> *@
+            @* </div> *@
             <div class="form-group">
                 <label asp-for="EmployeeName" class="control-label"></label>
-                <input asp-for="EmployeeName" class="form-control" />
+                <input asp-for="EmployeeName" class="form-control"/>
                 <span asp-validation-for="EmployeeName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CostCenter" class="control-label"></label>
-                <input asp-for="CostCenter" class="form-control" />
+                <input asp-for="CostCenter" class="form-control"/>
                 <span asp-validation-for="CostCenter" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PersonalCode" class="control-label"></label>
-                <input asp-for="PersonalCode" class="form-control" />
+                <input asp-for="PersonalCode" class="form-control"/>
                 <span asp-validation-for="PersonalCode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary"/>
             </div>
         </form>
     </div>
@@ -40,5 +45,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

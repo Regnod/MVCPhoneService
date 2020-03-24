@@ -35,7 +35,8 @@ namespace MVCPhoneServiceWeb.Controllers
                     MessagesExceeded = (a.Messages >= b.MessagesSent) ? 0 : b.MessagesSent - a.Messages,
                     DateTime = b.CallingPlanAssignmentDateTime,
                     PlanId = b.CallingPlanId
-                }).ToListAsync();
+                }
+            ).ToListAsync();
 
 
             var join2 = join1.Join(
@@ -47,7 +48,7 @@ namespace MVCPhoneServiceWeb.Controllers
                     EmployeeId = b.EmployeeId,
                     PhoneNumber = a.PhoneNumber,
                     DateTime = a.DateTime,
-                    PlanId= a.PlanId,
+                    PlanId = a.PlanId,
                     MinutesExceeded = a.MinutesExceeded,
                     MessagesExceeded = a.MinutesExceeded
                 }
@@ -63,7 +64,7 @@ namespace MVCPhoneServiceWeb.Controllers
             }
 
             join2 = join2.Where(a => a.MessagesExceeded > 0 || a.MinutesExceeded > 0);
-            
+
             var join3 = join2.Join(
                 await _context.Employees.ToListAsync(),
                 a => a.EmployeeId,
@@ -73,7 +74,7 @@ namespace MVCPhoneServiceWeb.Controllers
                     EmployeeName = b.EmployeeName,
                     EmployeId = a.EmployeeId,
                     PhoneNumber = a.PhoneNumber,
-                    PlanId= a.PlanId,
+                    PlanId = a.PlanId,
                     MinutesExceeded = a.MinutesExceeded,
                     MessagesExceeded = a.MinutesExceeded
                 });
@@ -91,6 +92,7 @@ namespace MVCPhoneServiceWeb.Controllers
                     MinutesExceeded = item.MinutesExceeded
                 });
             }
+
             return View(model);
         }
     }

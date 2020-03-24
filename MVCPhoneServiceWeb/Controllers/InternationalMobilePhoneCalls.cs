@@ -62,7 +62,7 @@ namespace MVCPhoneServiceWeb.Controllers
             }
 
             Dictionary<int, int> phoneNumberInterExpenses = new Dictionary<int, int>();
-            int total = 0;
+            float total = 0;
             foreach (var item in join2)
             {
                 //if (item.Addresse.ToString()[^1] == '1')

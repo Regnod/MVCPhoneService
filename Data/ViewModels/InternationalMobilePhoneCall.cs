@@ -8,6 +8,6 @@ namespace Data.ViewModels
       //  public int PersonalCode { get; set; }
         public int PhoneNumber { get; set; }
         public int Expense { get; set; }
-        public int Percent { get; set; }
+        public float Percent { get; set; }
     }
 }

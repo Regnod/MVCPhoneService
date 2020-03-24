@@ -1,0 +1,81 @@
+@model IEnumerable<Data.ViewModels.UserExceededDataPlan>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@* <head> *@
+@* <link rel="stylesheet" href="~/css/table.css"> *@
+@* </head> *@
+<h1>Users who have exceeded calling plans</h1>
+<div class="row">
+        <div class="form-group">
+            <input type="text" name="month"/>month
+            
+            <input type="text" name="year"/> Year
+        </div>
+    <div>
+        <input type="submit" value="Index" class="btn btn-primary"/>
+    </div>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPlanId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostCenter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NationalDataExceeded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InternationalDataExceeded)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataPlanId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostCenter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NationalDataExceeded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InternationalDataExceeded)
+            </td>
+            @* <td> *@
+            @*     <a asp-action="Edit" asp-route-id="@item.PhoneNumber">Edit</a> | *@
+            @*     <a asp-action="Details" asp-route-id="@item.PhoneNumber">Details</a> | *@
+            @*     <a asp-action="Delete" asp-route-id="@item.PhoneNumber">Delete</a> *@
+            @* </td> *@
+        </tr>
+    }
+    </tbody>
+</table>
